@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+{% load static %}
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#2e2a8f">
+	<!--website-favicon-->
+	<link href="{% static 'images/favicon.png' %}" rel="icon">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<!--plugin-css-->
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/plugin.min.css' %}" rel="stylesheet">
+	<!-- template-style-->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+	<title>{% block title %}REKLAMA - Маркетнговое агентство {% endblock title %}</title>
+	<meta name="description" content="Creative Agency, Marketing Agency Template">
+	<meta name="keywords" content="Creative Agency, Marketing Agency">
+</head>
+<body>
+
+	<!--Start Preloader -->
+	<!-- <div class="onloadpage" id="page_loader">
+		<div class="pre-content">
+			<div class="logo-pre"><img src="images/logo.png" alt="Logo" class="img-fluid" /></div>
+			<div class="pre-text-">
+				<span>Разработка веб-сайтов, создания дизайна и видеороликов</span>
+			</div>
+		</div>
+	</div> -->
+	<!--End Preloader -->
+
+	{% block header %}{% endblock header %}
+
+    {% block body %}{% endblock body %}
+
+    {% block footer %}{% endblock footer %}
+
+
+	<!--scroll to top-->
+	<a id="scrollUp" href="#top"></a>
+	<!-- js placed at the end of the document so the pages load faster -->
+	<script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/plugin.min.js' %}"></script>
+	<script src="{% static 'js/preloader.js' %}"></script>
+	<!--common script file-->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	<!-- GetButton.io widget -->
+	<script type="text/javascript">
+		(function () {
+			var options = {
+				whatsapp: "+996771494083", // WhatsApp number
+				telegram: "edzn21", // Telegram bot username
+				call_to_action: "Есть вопросы? Напишите", // Call to action
+				button_color: "#129BF4", // Color of button
+				position: "right", // Position may be 'right' or 'left'
+				order: "whatsapp,telegram", // Order of buttons
+				pre_filled_message: "из сайта", // WhatsApp pre-filled message
+			};
+			var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+			var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+			s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+			var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+		})();
+	</script>
+	<!-- /GetButton.io widget -->
+</body>
+</html>
