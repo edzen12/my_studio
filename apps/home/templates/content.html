@@ -7,12 +7,12 @@
                 <div class="hero-heading-sec">
                     <h2 class="wow fadeIn" data-wow-delay="0.3s">
                         <span>Web.</span> 
-                        <span>Mobile.</span> 
+                        <span>Video.</span> 
                         <span>Graphic.</span> 
                         <span>Marketing.</span>
                     </h2>
-                    <p class="wow fadeIn" data-wow-delay="0.6s">Решение для разработки веб-сайтов и приложений для преобразования и внедрения инноваций в бизнес.</p>
-                    <a href="#" class="btn-main bg-btn lnk wow fadeIn"  data-wow-delay="0.8s">
+                    <p class="wow fadeIn" data-wow-delay="0.6s">Решение для разработки веб-сайтов, видео и графического дизайна для преобразования и внедрения инноваций в ваш бизнес.</p>
+                    <a href="{% url 'portfolios' %}" class="btn-main bg-btn lnk wow fadeIn"  data-wow-delay="0.8s">
                         Посмотреть наши работы
                         <i class="fas fa-chevron-right fa-ani"></i><span class="circle"></span>
                     </a>
@@ -22,54 +22,20 @@
                 <div class="hero-right-scmm">
                     <div class="hero-service-cards wow fadeInRight" data-wow-duration="2s">
                         <div class="owl-carousel service-card-prb">
-                            <div class="service-slide card-bg-a" data-tilt data-tilt-max="5" data-tilt-speed="1000"><a href="#">
-                                <div class="service-card-hh">
-                                    <div class="image-sr-mm">
-                                        <img alt="custom-sport" src="images/service/vr.png">
-                                    </div>
-                                    <div class="title-serv-c"><span>VR</span> Solution</div>
-                                </div></a>
-                            </div>
-                            <div class="service-slide card-bg-b" data-tilt data-tilt-max="5" data-tilt-speed="1000"><a href="#">
-                                <div class="service-card-hh">
-                                    <div class="image-sr-mm">
-                                        <img alt="custom-sport" src="images/service/app-develop.png">
-                                    </div>
-                                    <div class="title-serv-c"><span>Custom</span> App Solution</div>
-                                </div></a>
-                            </div>
-                            <div class="service-slide card-bg-c" data-tilt data-tilt-max="5" data-tilt-speed="1000"><a href="#">
-                                <div class="service-card-hh">
-                                    <div class="image-sr-mm">
-                                        <img alt="custom-sport" src="images/service/startup.png">
-                                    </div>
-                                    <div class="title-serv-c"><span>Startup</span> Solution</div>
-                                </div></a>
-                            </div>
-                            <div class="service-slide card-bg-d" data-tilt data-tilt-max="5" data-tilt-speed="1000"><a href="#">
-                                <div class="service-card-hh">
-                                    <div class="image-sr-mm">
-                                        <img alt="custom-sport" src="images/service/car-rental.png">
-                                    </div>
-                                    <div class="title-serv-c"><span>Car</span> Rental Solution</div>
-                                </div></a>
-                            </div>
-                            <div class="service-slide card-bg-e" data-tilt data-tilt-max="5" data-tilt-speed="1000"><a href="#">
-                                <div class="service-card-hh">
-                                    <div class="image-sr-mm">
-                                        <img alt="custom-sport" src="images/service/marketing.png">
-                                    </div>
-                                    <div class="title-serv-c"><span>Marketing</span> Solution</div>
-                                </div></a>
-                            </div>
-                            <div class="service-slide card-bg-f" data-tilt data-tilt-max="5" data-tilt-speed="1000"><a href="#">
-                                <div class="service-card-hh">
-                                    <div class="image-sr-mm">
-                                        <img alt="custom-sport" src="images/service/ewallet.png">
-                                    </div>
-                                    <div class="title-serv-c"><span>e-Wallet</span> Solution</div>
-                                </div></a>
-                            </div>
+
+                            {% for serv in service %}
+                                <div class="service-slide {{serv.color}}" data-tilt data-tilt-max="5" data-tilt-speed="1000">
+                                    <a href="#">
+                                        <div class="service-card-hh">
+                                            <div class="image-sr-mm">
+                                                <img alt="custom-sport" src="{{serv.image.url}}">
+                                            </div>
+                                            <div class="title-serv-c">{{serv.title}}</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+
                         </div>
                     </div>
                 </div>
@@ -80,18 +46,15 @@
 <!--End Hero-->
 
 <!--Start About-->
-<section class="about-sec-rpb pad-tb" style="padding-bottom:100px">
+<section class="about-sec-rpb pad-tb" style="padding-bottom:50px">
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-10">
                 <div class="common-heading">
                     <h1 class="mb30">
                         <span class="text-second">Компания по разработке</span> 
-                        мобильных и веб-приложений с лучшим качеством
+                        веб-сайтов, графического дизайна и видео с лучшим качеством
                     </h1>
-                    <p>Lorem Ipsum is  text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book.  is simply dummy text of the printing and typesetting industry. is simply dummy text of the printing and typesetting industry.
-                    </p>
                 </div>
             </div>
         </div>
@@ -105,47 +68,27 @@
         <div class="row justify-content-center ">
             <div class="col-lg-8">
                 <div class="common-heading">
-                    <span>Our Work</span>
-                    <h2 class="mb0">Our Latest Creative Work</h2>
+                    <span>Наши работы</span>
+                    <h2 class="mb0">Наши последние работы</h2>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-sm-8 mt60 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="isotope_item hover-scale">
-                    <div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-                        <a href="#"><img src="images/portfolio/image-2.jpg" alt="image" class="img-fluid" /> </a>
-                    </div>
-                    <div class="item-info">
-                        <h4><a href="#">Ecommerce Development</a></h4>
-                        <p>Web Application</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 mt60 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="isotope_item hover-scale">
-                    <div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-                        <a href="#"><img src="images/portfolio/image-1.jpg" alt="image" class="img-fluid" /> </a>
-                    </div>
-                    <div class="item-info">
-                        <h4><a href="#">Creative App</a></h4>
-                        <p>iOs, Android</p>
+            {% for port in portfolio %}
+                <div class="col-lg-4 col-sm-4 mt60 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="isotope_item hover-scale">
+                        <div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
+                            <a href="{{port.link_portfolio}}" target="_blank"><img src="{{port.image.url}}" alt="{{port.title}}" class="img-fluid" /> </a>
+                        </div>
+                        <div class="item-info">
+                            <h4><a href="#">{{port.title}}</a></h4>
+                            <p>{{port.steak}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 mt60 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="isotope_item hover-scale">
-                    <div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-                        <a href="#"><img src="images/portfolio/image-6.jpg" alt="image" class="img-fluid" /> </a>
-                    </div>
-                    <div class="item-info">
-                        <h4><a href="#">Brochure Design</a></h4>
-                        <p>Graphic, Print</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
             <div class="col-lg-12 col-12 col-md-12 text-center mt-5">
-                <a href="#" class="btn btn-outline">Посмотреть все проекты</a>
+                <a href="{% url 'portfolios' %}" class="btn btn-outline">Посмотреть все проекты</a>
             </div>
         </div>
     </div>
@@ -155,75 +98,20 @@
 <!--Start statistics-->
 <div class="statistics-section bg-gradient6 pad-tb tilt3d">
     <div class="container">
-        <div class="row justify-content-center t-ctr">
-            <div class="col-lg-4 col-sm-6">
-                <div class="statistics">
-                    <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
-                        <img src="images/icons/startup.png" alt="years" class="img-fluid" />
-                    </div>
-                    <div class="statnumb">
-                        <span class="counter">5</span><span>+</span>
-                        <p>Лет в бизнесе</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="statistics">
-                    <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
-                        <img src="images/icons/team.png" alt="team" class="img-fluid" />
-                    </div>
-                    <div class="statnumb">
-                        <span class="counter">12</span><span>+</span>
-                        <p>Членов команды</p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="row small t-ctr">
-            <div class="col-lg-3 col-sm-6">
-                <div class="statistics">
-                    <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
-                        <img src="images/icons/deal.png" alt="happy" class="img-fluid" />
-                    </div>
-                    <div class="statnumb">
-                        <span class="counter">45</span>
-                        <p>Счастливые клиенты</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="statistics">
-                    <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
-                        <img src="images/icons/computers.png" alt="project" class="img-fluid" />
-                    </div>
-                    <div class="statnumb counter-number">
-                        <span class="counter">45</span>
-                        <p>Выполненные проекты</p>
+            {% for stat in statistic %}
+                <div class="col-lg-3 col-sm-6">
+                    <div class="statistics">
+                        <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
+                            <img src="{{stat.image.url}}" alt="{{stat.title}}" class="img-fluid" />
+                        </div>
+                        <div class="statnumb">
+                            <span>{{stat.numb}}</span>
+                            <p>{{stat.title}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="statistics">
-                    <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
-                        <img src="images/icons/worker.png" alt="work" class="img-fluid" />
-                    </div>
-                    <div class="statnumb">
-                        <span class="counter">95</span><span>k</span>
-                        <p>Отработанные часы</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="statistics mb0">
-                    <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
-                        <img src="images/icons/customer-service.png" alt="support" class="img-fluid" />
-                    </div>
-                    <div class="statnumb">
-                        <span class="counter">24</span><span>/</span><span class="counter">7</span>
-                        <p>Доступна поддержка</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -235,62 +123,22 @@
         <div class="row">
             <div class="col-lg-4 v-center">
                 <div class="common-heading text-l">
-                    <span>Industries we work for</span>
-                    <h2>Helping Businesses in All Domains</h2>
-                    <p>Successfully delivered digital products Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <span>Отрасли, в которых мы работаем</span>
+                    <h2>Помощь предприятиям во всех сферах</h2>
                 </div>
             </div>
             <div class="col-lg-8">
                 <div class="work-card-set">
-                    
-                    <div  class="icon-set wow fadeIn" data-wow-delay=".4s">
-                        <div class="work-card cd2">
-                            <div class="icon-bg"><img src="images/icons/icon-2.png" alt="Industries" /></div>
-                            <p>Digital Marketing</p>
-                        </div>
-                    </div>
+
+                    {% for help in help_bus %}
                     <div class="icon-set wow fadeIn" data-wow-delay=".6s">
-                        <div class="work-card cd3">
-                            <div class="icon-bg"><img src="images/icons/icon-3.png" alt="Industries" /></div>
-                            <p>Ecommerce Development</p>
+                        <div class="work-card {{help.color}}">
+                            <div class="icon-bg"><img src="{{help.image.url}}" alt="{{help.title}}" /></div>
+                            <p>{{help.title}}</p>
                         </div>
                     </div>
-                    <div class="icon-set wow fadeIn" data-wow-delay=".8s">
-                        <div class="work-card cd4">
-                            <div class="icon-bg"><img src="images/icons/icon-4.png" alt="Industries" /></div>
-                            <p>Video Service</p>
-                        </div>
-                    </div>
-                    <div class="icon-set wow fadeIn" data-wow-delay="1.2s">
-                        <div class="work-card cd6">
-                            <div class="icon-bg"><img src="images/icons/icon-6.png" alt="Industries" /></div>
-                            <p>Enterprise Service</p>
-                        </div>
-                    </div>
-                    <div class="icon-set wow fadeIn" data-wow-delay="1.4s">
-                        <div class="work-card cd7">
-                            <div class="icon-bg"><img src="images/icons/icon-7.png" alt="Industries" /></div>
-                            <p>Education Service</p>
-                        </div>
-                    </div>
-                    <div class="icon-set wow fadeIn" data-wow-delay="1.6s">
-                        <div class="work-card cd8">
-                            <div class="icon-bg"><img src="images/icons/icon-8.png" alt="Industries" /></div>
-                            <p>Tour and Travels</p>
-                        </div>
-                    </div>
-                    <div class="icon-set wow fadeIn" data-wow-delay="1.8s">
-                        <div class="work-card cd9">
-                            <div class="icon-bg"><img src="images/icons/icon-9.png" alt="Industries" /></div>
-                            <p>Health Service</p>
-                        </div>
-                    </div>
-                    <div class="icon-set wow fadeIn" data-wow-delay="2.2s">
-                        <div class="work-card cd11">
-                            <div class="icon-bg"><img src="images/icons/icon-11.png" alt="Industries" /></div>
-                            <p>Restaurant Service</p>
-                        </div>
-                    </div>
+                    {% endfor %}
+                    
                 </div>
             </div>
         </div>

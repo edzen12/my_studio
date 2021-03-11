@@ -22,4 +22,4 @@ class Statistic(models.Model):
         return self.title
     
     class Meta:
-        verbose_name_plural = "Команда"
+        verbose_name_plural = "Статистика"

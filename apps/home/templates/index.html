@@ -1,7 +1,9 @@
 {% extends 'homebase.html' %}
 
 
-{% block title %} Title {% endblock %}
+{% block title %} {{setting.title}} - {{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock keywords %}
+{% block description %}{{setting.description}}{% endblock description %}
 
 
 {% block header %}

@@ -1,0 +1,72 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} НАША КОМАНДА - {{setting.title}} - {{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock keywords %}
+{% block description %}{{setting.description}}{% endblock description %}
+
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
+
+{% block body %} 
+     <!--Breadcrumb Area-->
+	<section class="breadcrumb-area banner-1" data-background="{% static 'images/banner/9.jpg' %}">
+		<div class="text-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 v-center">
+						<div class="bread-inner">
+							<div class="bread-menu">
+								<ul>
+									<li><a href="{% url 'home' %}">ГЛАВНАЯ</a></li>
+									<li><a href="#">О НАС</a></li>
+								</ul>
+							</div>
+							<div class="bread-title">
+								<h2>НАША КОМАНДА</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End Breadcrumb Area-->
+
+    <!--Start Team Members-->
+	<section class="team pad-tb deep-dark">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="common-heading ptag">
+						<span>We Are Awesome</span>
+						<h2>Наша команда</h2>
+						<p class="mb0 pr-5 pl-5 pb-3">"Собраться вместе есть начало. Держаться вместе есть прогресс. Работать вместе есть успех."</p>
+						<span>- Генри Форд</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+                {% for t in team %}
+				<div class="col-lg-3 col-sm-6">
+					<div class="full-image-card hover-scale">
+						<div class="image-div"><a href="#"><img src="{{t.image.url}}" alt="{{t.name}}" class="img-fluid"/></a></div>
+						<div class="info-text-block">
+							<h4><a href="#">{{t.name}}</a></h4>
+							<p>{{t.steak}}</p>
+						</div>
+					</div>
+				</div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!--End Team Members-->
+
+{% endblock body %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+

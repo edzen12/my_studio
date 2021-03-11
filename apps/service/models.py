@@ -11,10 +11,15 @@ class Service(models.Model):
         ('card-bg-e', 'Небесный'),
         ('card-bg-f', 'Зеленый'),
     ]
+    FILTERS = [
+        ('website', 'Веб-сайты'),
+        ('graphic', 'Граф.работы'),
+    ]
     title = models.CharField(verbose_name="Заголовок", max_length=50)
     color = models.CharField(verbose_name="Цвета", choices=COLOR, max_length=15)
+    filter = models.CharField(verbose_name="Фильтр", choices=FILTERS, blank=True, null=True, max_length=50)
     image = models.ImageField(verbose_name="Фото", upload_to='services/')
-    description = models.TextField(verbose_name="Описание")
+    description = models.TextField(verbose_name="Описание", blank=True, null=True,)
 
     def __str__(self):
         return self.title
@@ -43,3 +48,15 @@ class Help_bus(models.Model):
     
     class Meta:
         verbose_name_plural = "Бизнес сферы"
+
+
+class My_steak(models.Model):
+    title = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='steak/')
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name_plural = "Наши стеки"
+        

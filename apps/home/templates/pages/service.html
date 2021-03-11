@@ -1,0 +1,95 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} УСЛУГИ - {{setting.title}} - {{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock keywords %}
+{% block description %}{{setting.description}}{% endblock description %}
+
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
+
+{% block body %} 
+     <!--Breadcrumb Area-->
+	<section class="breadcrumb-area banner-1" data-background="{% static 'images/banner/8.jpg' %}">
+		<div class="text-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 v-center">
+						<div class="bread-inner">
+							<div class="bread-menu">
+								<ul>
+									<li><a href="{% url 'home' %}">ГЛАВНАЯ</a></li>
+									<li><a href="#">УСЛУГИ</a></li>
+								</ul>
+							</div>
+							<div class="bread-title">
+								<h2>НАШИ УСЛУГИ</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End Breadcrumb Area-->
+
+    <!--Start Portfolio-->
+	<section class="portfolio-page pad-tb">
+		<div class="container">
+            <!--Start Tech-->
+			<div class="techonology-used-">
+				<div class="container">
+					<ul class="h-scroll tech-icons">
+                        {% for st in steak %}
+						<li><a href="#"><img src="{{st.image.url}}" alt="{{st.title}}"></a></li>
+                        {% endfor %}
+					</ul>
+				</div>
+			</div>
+			<!--End Tech-->
+			<div class="row justify-content-left">
+				<div class="col-lg-6">
+					<div class="common-heading pp">
+						<span>Наши работы</span>
+						<h2>Все наши проекты</h2>
+					</div>
+				</div>
+				<div class="col-lg-6 v-center">
+					<div class="filters">
+						<ul class="filter-menu">
+							<li data-filter="*" class="is-checked">Все</li>
+							<li data-filter=".website">Веб работы</li>
+							<li data-filter=".graphic">Граф. работы</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row card-list">
+				<div class="col-lg-4 col-md-6 grid-sizer"></div>
+                {% for por in services %}
+				<div class="col-lg-4 col-sm-4 mt40 single-card-item {{por.filter}}">
+					<div class="isotope_item up-hor">
+						<div class="item-image">
+							<a href="#">
+                                <img src="{{por.image.url}}" alt="{{por.title}}" class="img-fluid" style="padding:60px" /> 
+                            </a>
+						</div>
+						<div class="item-info-div shdo">
+							<h4><a href="#">{{por.title}}</a></h4>
+							<p>{{por.steak}}</p>
+						</div>
+					</div>
+				</div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!--End Portfolio-->
+
+{% endblock body %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+

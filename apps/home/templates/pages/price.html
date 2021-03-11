@@ -1,0 +1,77 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} ЦЕНЫ - {{setting.title}} - {{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock keywords %}
+{% block description %}{{setting.description}}{% endblock description %}
+
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
+
+{% block body %} 
+     <!--Breadcrumb Area-->
+	<section class="breadcrumb-area banner-1" data-background="{% static 'images/banner/5.jpg' %}">
+		<div class="text-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 v-center">
+						<div class="bread-inner">
+							<div class="bread-menu">
+								<ul>
+									<li><a href="{% url 'home' %}">ГЛАВНАЯ</a></li>
+									<li><a href="#">ЦЕНЫ</a></li>
+								</ul>
+							</div>
+							<div class="bread-title">
+								<h2>НАШИ ЦЕНЫ</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End Breadcrumb Area-->
+
+    <!--Start Pricing-->
+	<section class="block-a1 pad-tb">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="common-heading ptag">
+						<span>цены</span>
+						<h2>Таблица цен</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				{% for pr in price %}
+				<div class="col-lg-4 col-md-4 col-12">
+					<div class="pricing-table best-plan mt60 bg-gradient4">
+						<div class="inner-table">
+							<img src="{{pr.image.url}}" alt="{{pr.title}}"/>
+							<span class="title">{{pr.title}}</span>
+							<p class="title-sub">{{pr.sub_title}}</p>
+							<h2><sup>$</sup> {{pr.price}}</h2>
+							<div class="details">
+								<ul>
+									<li>{{pr.desc_list}}</li>
+								</ul>
+							</div>
+						</div>
+						<a href="https://wa.me/{{setting.whatsapp}}" class="btn-main bg-btn3 lnk">Начать <i class="fas fa-chevron-right fa-icon"></i> <span class="circle"></span></a>
+					</div>
+				</div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!--End Pricing-->
+
+{% endblock body %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+

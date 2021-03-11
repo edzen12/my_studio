@@ -17,9 +17,9 @@
 	<link href="{% static 'css/style.css' %}" rel="stylesheet">
 	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
 
-	<title>{% block title %}REKLAMA - Маркетнговое агентство {% endblock title %}</title>
-	<meta name="description" content="Creative Agency, Marketing Agency Template">
-	<meta name="keywords" content="Creative Agency, Marketing Agency">
+	<title>{% block title %}{{setting.title}} {% endblock title %}</title>
+	<meta name="description" content="{% block description %}{{setting.description}}{% endblock description %}">
+	<meta name="keywords" content="{% block keywords %}{{setting.keywords}}{% endblock keywords %}">
 </head>
 <body>
 
