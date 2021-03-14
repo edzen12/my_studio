@@ -1,0 +1,26 @@
+<section class="work-category pad-tb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 v-center">
+                <div class="common-heading text-l">
+                    <span>Отрасли, в которых мы работаем</span>
+                    <h2>Помощь предприятиям во всех сферах</h2>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="work-card-set">
+
+                    {% for help in help_bus %}
+                    <div class="icon-set wow fadeIn" data-wow-delay=".6s">
+                        <div class="work-card {{help.color}}">
+                            <div class="icon-bg"><img src="{{help.image.url}}" alt="{{help.title}}" /></div>
+                            <p>{{help.title}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

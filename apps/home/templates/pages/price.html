@@ -41,26 +41,28 @@
 				<div class="col-lg-8">
 					<div class="common-heading ptag">
 						<span>цены</span>
-						<h2>Таблица цен</h2>
+						<h3>Таблица цен</h3>
 					</div>
 				</div>
 			</div>
 			<div class="row justify-content-center">
 				{% for pr in price %}
-				<div class="col-lg-4 col-md-4 col-12">
+				<div class="col-lg-3 col-md-3 col-12">
 					<div class="pricing-table best-plan mt60 bg-gradient4">
 						<div class="inner-table">
-							<img src="{{pr.image.url}}" alt="{{pr.title}}"/>
 							<span class="title">{{pr.title}}</span>
 							<p class="title-sub">{{pr.sub_title}}</p>
-							<h2><sup>$</sup> {{pr.price}}</h2>
-							<div class="details">
+							<h2>от {{pr.price}}<sup>$</sup></h2>
+							<div class="details text-left">
 								<ul>
-									<li>{{pr.desc_list}}</li>
+									<li>{{pr.desc_list|safe}}</li>
 								</ul>
 							</div>
 						</div>
-						<a href="https://wa.me/{{setting.whatsapp}}" class="btn-main bg-btn3 lnk">Начать <i class="fas fa-chevron-right fa-icon"></i> <span class="circle"></span></a>
+						<a href="https://wa.me/{{setting.whatsapp}}" class="btn-main bg-btn3 lnk">
+							Начать <i class="fas fa-chevron-right fa-icon"></i> 
+							<span class="circle"></span>
+						</a>
 					</div>
 				</div>
                 {% endfor %}

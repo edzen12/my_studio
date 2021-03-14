@@ -1,147 +1,20 @@
 {% load static %}
 <!--Start Hero-->
-<section class="hero-card-web bg-gradient12 shape-bg3">
-    <div class="hero-main-rp container-fluid">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="hero-heading-sec">
-                    <h2 class="wow fadeIn" data-wow-delay="0.3s">
-                        <span>Web.</span> 
-                        <span>Video.</span> 
-                        <span>Graphic.</span> 
-                        <span>Marketing.</span>
-                    </h2>
-                    <p class="wow fadeIn" data-wow-delay="0.6s">Решение для разработки веб-сайтов, видео и графического дизайна для преобразования и внедрения инноваций в ваш бизнес.</p>
-                    <a href="{% url 'portfolios' %}" class="btn-main bg-btn lnk wow fadeIn"  data-wow-delay="0.8s">
-                        Посмотреть наши работы
-                        <i class="fas fa-chevron-right fa-ani"></i><span class="circle"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="hero-right-scmm">
-                    <div class="hero-service-cards wow fadeInRight" data-wow-duration="2s">
-                        <div class="owl-carousel service-card-prb">
-
-                            {% for serv in service %}
-                                <div class="service-slide {{serv.color}}" data-tilt data-tilt-max="5" data-tilt-speed="1000">
-                                    <a href="#">
-                                        <div class="service-card-hh">
-                                            <div class="image-sr-mm">
-                                                <img alt="custom-sport" src="{{serv.image.url}}">
-                                            </div>
-                                            <div class="title-serv-c">{{serv.title}}</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            {% endfor %}
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% include 'components/banner.html' %}
 <!--End Hero-->
 
 <!--Start About-->
-<section class="about-sec-rpb pad-tb" style="padding-bottom:50px">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-10">
-                <div class="common-heading">
-                    <h1 class="mb30">
-                        <span class="text-second">Компания по разработке</span> 
-                        веб-сайтов, графического дизайна и видео с лучшим качеством
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% include 'components/about.html' %}
 <!--End About-->
 
 <!--Start Portfolio-->
-<section class="portfolio-section pad-tb">
-    <div class="container">
-        <div class="row justify-content-center ">
-            <div class="col-lg-8">
-                <div class="common-heading">
-                    <span>Наши работы</span>
-                    <h2 class="mb0">Наши последние работы</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            {% for port in portfolio %}
-                <div class="col-lg-4 col-sm-4 mt60 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="isotope_item hover-scale">
-                        <div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-                            <a href="{{port.link_portfolio}}" target="_blank"><img src="{{port.image.url}}" alt="{{port.title}}" class="img-fluid" /> </a>
-                        </div>
-                        <div class="item-info">
-                            <h4><a href="#">{{port.title}}</a></h4>
-                            <p>{{port.steak}}</p>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-            <div class="col-lg-12 col-12 col-md-12 text-center mt-5">
-                <a href="{% url 'portfolios' %}" class="btn btn-outline">Посмотреть все проекты</a>
-            </div>
-        </div>
-    </div>
-</section>
+{% include 'components/portfolio.html' %}
 <!--End Portfolio-->
 
 <!--Start statistics-->
-<div class="statistics-section bg-gradient6 pad-tb tilt3d">
-    <div class="container">
-        <div class="row small t-ctr">
-            {% for stat in statistic %}
-                <div class="col-lg-3 col-sm-6">
-                    <div class="statistics">
-                        <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
-                            <img src="{{stat.image.url}}" alt="{{stat.title}}" class="img-fluid" />
-                        </div>
-                        <div class="statnumb">
-                            <span>{{stat.numb}}</span>
-                            <p>{{stat.title}}</p>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
+{% include 'components/statistics.html' %}
 <!--End statistics-->
 
 <!--Start work-category-->
-<section class="work-category pad-tb">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 v-center">
-                <div class="common-heading text-l">
-                    <span>Отрасли, в которых мы работаем</span>
-                    <h2>Помощь предприятиям во всех сферах</h2>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="work-card-set">
-
-                    {% for help in help_bus %}
-                    <div class="icon-set wow fadeIn" data-wow-delay=".6s">
-                        <div class="work-card {{help.color}}">
-                            <div class="icon-bg"><img src="{{help.image.url}}" alt="{{help.title}}" /></div>
-                            <p>{{help.title}}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% include 'components/work_cat.html' %}
 <!--End  work-category-->

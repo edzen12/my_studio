@@ -1,0 +1,43 @@
+<section class="hero-card-web bg-gradient12 shape-bg3">
+    <div class="hero-main-rp container-fluid">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="hero-heading-sec">
+                    <h2 class="wow fadeIn" data-wow-delay="0.3s">
+                        <span>Web.</span> 
+                        <span>Video.</span> 
+                        <span>Graphic.</span> 
+                        <span>Marketing.</span>
+                    </h2>
+                    <p class="wow fadeIn" data-wow-delay="0.6s">Решение для разработки веб-сайтов, видео и графического дизайна для преобразования и внедрения инноваций в ваш бизнес.</p>
+                    <a href="{% url 'portfolios' %}" class="btn-main bg-btn lnk wow fadeIn"  data-wow-delay="0.8s">
+                        Посмотреть наши работы
+                        <i class="fas fa-chevron-right fa-ani"></i><span class="circle"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="hero-right-scmm">
+                    <div class="hero-service-cards wow fadeInRight" data-wow-duration="2s">
+                        <div class="owl-carousel service-card-prb">
+
+                            {% for serv in service %}
+                                <div class="service-slide {{serv.color}}" data-tilt data-tilt-max="5" data-tilt-speed="1000">
+                                    <a href="#">
+                                        <div class="service-card-hh">
+                                            <div class="image-sr-mm">
+                                                <img alt="custom-sport" src="{{serv.image.url}}">
+                                            </div>
+                                            <div class="title-serv-c">{{serv.title}}</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
