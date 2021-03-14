@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
+    'snowpenguin.django.recaptcha3',
 
     'apps.home',
     'apps.portfolio',
@@ -165,3 +166,9 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+
+RECAPTCHA_PRIVATE_KEY = '6Ldt3H4aAAAAANRI6JH1z0PDFiEtBrhDqtvG9PNQ'
+RECAPTCHA_PUBLIC_KEY = '6Ldt3H4aAAAAAL55FiocrmQ4x8Rfdt-asbpKW6j6'
+RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_SCORE_THRESHOLD = 0.5
