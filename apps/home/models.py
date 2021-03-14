@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Setting(models.Model):
@@ -17,7 +18,7 @@ class Setting(models.Model):
     instagram = models.CharField(blank=True,null=True, max_length=255, verbose_name="Instagram ссылка")
     telegram = models.CharField(blank=True, null=True, max_length=255, verbose_name="Telegram для связи")
 
-    aboutus_page = models.TextField(verbose_name="О нас", blank=True, null=True)
+    aboutus_page = RichTextUploadingField(verbose_name="О нас", blank=True, null=True)
 
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)

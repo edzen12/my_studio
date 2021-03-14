@@ -19,6 +19,7 @@ from apps.home import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('apps.home.urls')),
 
     path('aboutus/', views.aboutus, name="aboutus"),
