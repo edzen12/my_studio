@@ -13,10 +13,10 @@
                 <div class="col-lg-4 col-sm-4 mt60 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="isotope_item hover-scale">
                         <div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-                            <a href="{{port.link_portfolio}}" target="_blank"><img src="{{port.image.url}}" alt="{{port.title}}" class="img-fluid" /> </a>
+                            <a href="{% url 'portfolios' %}" target="_blank"><img src="{{port.image.url}}" alt="{{port.title}}" class="img-fluid" /> </a>
                         </div>
                         <div class="item-info">
-                            <h4><a href="#">{{port.title}}</a></h4>
+                            <h4><a href="{% url 'portfolios' %}">{{port.title}}</a></h4>
                             <p>{{port.steak}}</p>
                         </div>
                     </div>

@@ -23,7 +23,7 @@
 
                             {% for serv in service %}
                                 <div class="service-slide {{serv.color}}" data-tilt data-tilt-max="5" data-tilt-speed="1000">
-                                    <a href="#">
+                                    <a href="{% url 'services' %}">
                                         <div class="service-card-hh">
                                             <div class="image-sr-mm">
                                                 <img alt="custom-sport" src="{{serv.image.url}}">
