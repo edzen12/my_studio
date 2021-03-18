@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.base import View
 
 from apps.home.models import Setting
 from apps.portfolio.models import Portfolio
@@ -53,9 +54,30 @@ def service(request):
     return render(request, 'pages/service.html', context)
 
 
+class ServiceDetailView(View):
+    def get(self, request, slug):
+        setting = Setting.objects.get(pk=1)
+        services = Service.objects.get(slug=slug)
+        context = {
+            'services': services,
+            'setting': setting,
+        }
+        return render(request, "page_detail/service_detail.html", context)
+
+
 def price(request):
     setting = Setting.objects.get(pk=1)
     price = Price.objects.all()
     context = {'setting':setting, 'price':price}
     return render(request, 'pages/price.html', context)
 
+
+class PriceDetailView(View):
+    def get(self, request, slug):
+        setting = Setting.objects.get(pk=1)
+        price = Price.objects.get(slug=slug)
+        context = {
+            'price': price,
+            'setting': setting,
+        }
+        return render(request, "page_detail/price_detail.html", context)

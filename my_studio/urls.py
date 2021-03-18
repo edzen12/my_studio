@@ -13,6 +13,10 @@ urlpatterns = [
     path('teams/', views.team, name="teams"),
     path('portfolio/', views.portfolio, name="portfolios"),
     path('services/', views.service, name="services"),
+
+    path('services/<slug:slug>/', views.ServiceDetailView.as_view(), name="services_detail"),
+    path('prices/<slug:slug>/', views.PriceDetailView.as_view(), name="price_detail"),
+
     path('prices/', views.price, name="prices"),
 ]
 if settings.DEBUG:

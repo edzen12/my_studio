@@ -71,12 +71,12 @@
 				<div class="col-lg-4 col-sm-4 mt40 single-card-item {{por.filter}}">
 					<div class="isotope_item up-hor">
 						<div class="item-image">
-							<a href="#">
+							<a href="{{por.get_absolute_url}}">
                                 <img src="{{por.image.url}}" alt="{{por.title}}" class="img-fluid" style="padding:60px" /> 
                             </a>
 						</div>
 						<div class="item-info-div shdo">
-							<h4><a href="#">{{por.title}}</a></h4>
+							<h4><a href="{{por.get_absolute_url}}">{{por.title}}</a></h4>
 							<p>{{por.steak|safe}}</p>
 						</div>
 					</div>

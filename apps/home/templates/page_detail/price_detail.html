@@ -1,0 +1,61 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} УСЛУГИ - {{setting.title}} - {{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock keywords %}
+{% block description %}{{setting.description}}{% endblock description %}
+
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
+
+{% block body %} 
+     <!--Breadcrumb Area-->
+	<section class="breadcrumb-area banner-1" data-background="{% static 'images/banner/8.jpg' %}">
+		<div class="text-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 v-center">
+						<div class="bread-inner">
+							<div class="bread-menu">
+								<ul>
+									<li><a href="{% url 'home' %}">ГЛАВНАЯ</a></li>
+									<li><a href="#">УСЛУГИ</a></li>
+								</ul>
+							</div>
+							<div class="bread-title">
+								<h2>{{services.title}}</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End Breadcrumb Area-->
+
+    <!--Start Portfolio-->
+	<section class="portfolio-page pad-tb">
+        <div class="container">
+            <!--Start Tech-->
+			<div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="common-heading pp p-details">
+                        <span>{{price.sub_title}}</span>
+                        <h1>{{price.title}}</h1>
+                        <h3>Цена от {{price.price}}$</h3>
+                        
+                        <p>{{price.desc_list|safe}}</p>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</section>
+	<!--End Portfolio-->
+
+{% endblock body %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+

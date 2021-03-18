@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
@@ -20,6 +21,10 @@ class Service(models.Model):
     filter = models.CharField(verbose_name="Фильтр", choices=FILTERS, blank=True, null=True, max_length=50)
     image = models.ImageField(verbose_name="Фото", upload_to='services/')
     description = RichTextUploadingField(verbose_name="Описание", blank=True, null=True)
+    slug = models.SlugField(blank=True, null=True)
+
+    def get_absolute_url(self):
+        return reverse("services_detail", kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title
