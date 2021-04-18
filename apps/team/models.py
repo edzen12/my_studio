@@ -11,6 +11,7 @@ class Team(models.Model):
     
     class Meta:
         verbose_name_plural = "Команда"
+        ordering = ['-id',]
 
 
 class Statistic(models.Model):
@@ -23,3 +24,4 @@ class Statistic(models.Model):
     
     class Meta:
         verbose_name_plural = "Статистика"
+        ordering = ['-id',]

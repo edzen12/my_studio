@@ -31,6 +31,7 @@ class Service(models.Model):
     
     class Meta:
         verbose_name_plural = "Услуги"
+        ordering = ['-id',]
 
 
 class Help_bus(models.Model):
