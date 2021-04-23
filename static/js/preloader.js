@@ -1,6 +1,4 @@
-/* Theme: Niwax - Creative Agency & Portfolio HTML Template
-Author: Rajesh-Doot	
-File Description: preloader js */
+/*File Description: preloader js */
 (function ($) {
   "use strict";
   //Preloader
