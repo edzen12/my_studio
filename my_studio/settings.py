@@ -13,7 +13,7 @@ SECRET_KEY = 'r5(b6ttv6cz0s#r)aan6jnfq5deirmm2#on7gdzjslcf&zhw8j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'mbcstudio.org']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '5.23.55.124', 'mbcstudio.org']
 
 
 # Application definition
